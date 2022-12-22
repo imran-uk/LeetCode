@@ -1,5 +1,6 @@
 // TODO
 // create test class for this
+namespace LeetCode;
 
 public class LeetCodeSolution {
     public int MaximumWealth(int[][] accounts) {
@@ -25,5 +26,13 @@ public class LeetCodeSolution {
         }
 
         return maxCustomerWealthSoFar;
+    }
+
+    public IList<string> FizzBuzz(int n) {
+        // 
+
+        // 
+
+        // 
     }
 }
