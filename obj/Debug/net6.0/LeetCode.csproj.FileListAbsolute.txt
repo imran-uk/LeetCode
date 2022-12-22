@@ -1,0 +1,15 @@
+/home/imran/code/LeetCode/bin/Debug/net6.0/LeetCode
+/home/imran/code/LeetCode/bin/Debug/net6.0/LeetCode.deps.json
+/home/imran/code/LeetCode/bin/Debug/net6.0/LeetCode.runtimeconfig.json
+/home/imran/code/LeetCode/bin/Debug/net6.0/LeetCode.dll
+/home/imran/code/LeetCode/bin/Debug/net6.0/ref/LeetCode.dll
+/home/imran/code/LeetCode/bin/Debug/net6.0/LeetCode.pdb
+/home/imran/code/LeetCode/obj/Debug/net6.0/LeetCode.csproj.AssemblyReference.cache
+/home/imran/code/LeetCode/obj/Debug/net6.0/LeetCode.GeneratedMSBuildEditorConfig.editorconfig
+/home/imran/code/LeetCode/obj/Debug/net6.0/LeetCode.AssemblyInfoInputs.cache
+/home/imran/code/LeetCode/obj/Debug/net6.0/LeetCode.AssemblyInfo.cs
+/home/imran/code/LeetCode/obj/Debug/net6.0/LeetCode.csproj.CoreCompileInputs.cache
+/home/imran/code/LeetCode/obj/Debug/net6.0/LeetCode.dll
+/home/imran/code/LeetCode/obj/Debug/net6.0/ref/LeetCode.dll
+/home/imran/code/LeetCode/obj/Debug/net6.0/LeetCode.pdb
+/home/imran/code/LeetCode/obj/Debug/net6.0/LeetCode.genruntimeconfig.cache
