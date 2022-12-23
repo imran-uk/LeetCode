@@ -27,5 +27,9 @@ foreach(string element in fizzBuzzOutput2)
 List<string> fizzBuzzOutput3 = sol.FizzBuzz(15);
 foreach(string element in fizzBuzzOutput3)
 {
-    Console.WriteLine($"The FizzBuzz output: {element}");
+    // Console.WriteLine($"The FizzBuzz output: {element}");
 }
+
+// okay now steps to zero
+int stepsToZero = sol.NumberOfSteps(7);
+Console.WriteLine($"Steps to zero with 7: {stepsToZero}");

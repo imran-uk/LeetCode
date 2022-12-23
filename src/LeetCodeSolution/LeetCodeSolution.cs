@@ -63,4 +63,28 @@ public class LeetCode {
 
         return output;
     }
+
+
+    public int NumberOfSteps(int num) {
+
+        int stepCount = 0;
+
+        while(num != 0)
+        {
+            bool isEven = num % 2 == 0;
+            
+            if(isEven)
+            {
+                num /= 2;
+            }
+            else
+            {
+                num--;
+            }
+
+            stepCount++;
+        }
+
+        return stepCount;
+    }
 }
