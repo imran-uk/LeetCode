@@ -1,13 +1,16 @@
 using NUnit.Framework;
-using LeetCode;
+using LeetCodeSolution;
 
-namespace LeetCodeTests;
+namespace LeetCodeUnitTest;
 
-public class LeetCodeUnitTests
+public class LeetCodeUnitTest
 {
+    private LeetCode sol = default!;
+
     [SetUp]
     public void Setup()
     {
+        sol = new LeetCode();
     }
 
     // TODO
@@ -16,7 +19,7 @@ public class LeetCodeUnitTests
     public void MaxCustomerWeathTest()
     {
         // Arrange
-        var maxWealthExpected = 42;
+        var maxWealthExpected = 24;
 
         // given this input
         var customerAccounts = new int[][] { 
@@ -24,12 +27,11 @@ public class LeetCodeUnitTests
             new int[] {6, 3, 2}, 
             new int[] {7, 8, 9} 
         };
-        var sol = new LeetCodeSolution();
 
         // Act
         var maxValueCalculated = sol.MaximumWealth(customerAccounts);
 
         // Assert
-        // Assert.Equals(maxValueCalculated, maxWealthExpected);
+        Assert.AreEqual(maxWealthExpected, maxValueCalculated);
     }
 }

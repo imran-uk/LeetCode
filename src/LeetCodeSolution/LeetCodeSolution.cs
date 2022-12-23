@@ -1,8 +1,11 @@
+using System;
+using System.Collections.Generic;
+
 // TODO
 // create test class for this
-namespace LeetCode;
+namespace LeetCodeSolution;
 
-public class LeetCodeSolution {
+public class LeetCode {
     public int MaximumWealth(int[][] accounts) {
         int maxCustomerWealthSoFar = 0;
 
@@ -34,5 +37,6 @@ public class LeetCodeSolution {
         // 
 
         // 
+        return new List<string> { "foo", "bar" };
     }
 }

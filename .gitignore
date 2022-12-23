@@ -37,7 +37,6 @@ bld/
 #wwwroot/
 
 # Visual Studio 2017 auto generated files
-Generated\ Files/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
@@ -127,6 +126,7 @@ _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
+<<<<<<< HEAD
 # TeamCity is a build add-in
 _TeamCity*
 
@@ -348,3 +348,43 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+App_Data/*.ldf
+
+# =========================
+# Windows detritus
+# =========================
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac desktop service store files
+.DS_Store
+
+_NCrunch*
+
+# python
+*.pyc
+*.pyo
+*.pyc
+
+# compiled sauce
+*.o
+*.so
+
+# log
+*.log
+access_log_*
+error_log_*
+
+# misc
+*.lock
+tags
+.tags
+>>>>>>> 42cf5fc (Working tests and re-org of files/dirs)
