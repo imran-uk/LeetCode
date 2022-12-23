@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-
-// TODO
-// create test class for this
 namespace LeetCodeSolution;
 
 public class LeetCode {
@@ -31,12 +26,41 @@ public class LeetCode {
         return maxCustomerWealthSoFar;
     }
 
-    public IList<string> FizzBuzz(int n) {
-        // 
+    public List<string> FizzBuzz(int n) {
+        List<string> output = new List<string>();
 
-        // 
+        foreach(int i in Enumerable.Range(1, n))
+        {
+            if(i % 3 == 0 && i % 5 == 0)
+            {
+                output.Add("FizzBuzz");
+            }
+            else if(i % 3 == 0)
+            {
+                output.Add("Fizz");
+            }
+            else if(i % 5 == 0)
+            {
+                output.Add("Buzz");
+            }
+            else
+            {
+                output.Add(i.ToString());
+            }
 
-        // 
-        return new List<string> { "foo", "bar" };
+            /*
+            switch(i)
+            {
+                case i % 3:
+                    // add to output
+                    break;
+                default:
+                    // add the i to output as string
+                    break;
+            }
+            */
+        }
+
+        return output;
     }
 }
