@@ -32,4 +32,40 @@ foreach(string element in fizzBuzzOutput3)
 
 // okay now steps to zero
 int stepsToZero = sol.NumberOfSteps(7);
-Console.WriteLine($"Steps to zero with 7: {stepsToZero}");
+// Console.WriteLine($"Steps to zero with 7: {stepsToZero}");
+
+// middle of the list task
+var listNodeOf3 = new ListNode(1, new ListNode(2, new ListNode(3)));
+var listNodeOf2 = new ListNode(1, new ListNode(2));
+var listNodeOf5 = new ListNode(1, new ListNode(2, 
+    new ListNode(3, 
+        new ListNode(4, 
+            new ListNode(5)))));
+
+
+var middleOfList2 = sol.MiddleNode(listNodeOf2);
+
+while(middleOfList2 is not null)
+{
+    var nodeVal = middleOfList2.val;
+    Console.WriteLine($"The nodeList value is: {nodeVal}");
+    middleOfList2 = middleOfList2.next;
+}
+
+var middleOfList3 = sol.MiddleNode(listNodeOf3);
+
+while(middleOfList3 is not null)
+{
+    var nodeVal = middleOfList3.val;
+    Console.WriteLine($"The nodeList value is: {nodeVal}");
+    middleOfList3 = middleOfList3.next;
+}
+
+var middleOfList5 = sol.MiddleNode(listNodeOf5);
+
+while(middleOfList5 is not null)
+{
+    var nodeVal = middleOfList5.val;
+    Console.WriteLine($"The nodeList value is: {nodeVal}");
+    middleOfList5 = middleOfList5.next;
+}
