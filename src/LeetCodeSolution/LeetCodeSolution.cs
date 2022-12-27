@@ -139,6 +139,81 @@ public class LeetCode {
 
         return nextNode!;
     }
+
+    public bool CanConstruct(string ransomNote, string magazine) {
+        bool canConstruct = false;
+
+        // remove all spaces
+        // magazine.Replace()
+        // use regex
+        string ransomNoteClean = System.Text.RegularExpressions.Regex.Replace(ransomNote, @"\s+", "");
+        string magazineClean = System.Text.RegularExpressions.Regex.Replace(magazine, @"\s+", "");
+        
+        if(magazineClean.Contains(ransomNoteClean))
+        {
+            canConstruct = true;
+        }
+        else
+        {
+            // char[] ransomNoteChars = ransomNoteClean.ToCharArray();
+            // char[] magazineChars = magazineClean.ToCharArray();
+
+            List<char> ransomNoteCharsList = ransomNoteClean.ToList<char>();
+            List<char> magazineCharsList = magazineClean.ToList<char>();
+
+            // remove spaces
+            // ransomNoteCharsList.RemoveAll(' ');
+
+            bool ransomLetterFound = false;
+
+            foreach(char ransomLetter in ransomNoteCharsList)
+            {
+                Console.WriteLine($"found letter {ransomLetter}");
+
+                foreach(char magLetter in magazineCharsList)
+                {
+                    Console.WriteLine($"found mag letter {magLetter}");
+                    
+                    if(ransomLetter == magLetter)
+                    {
+                        ransomLetterFound = true;
+                        magazineCharsList.Remove(ransomLetter);
+                        break;
+                    }
+                    else
+                    {
+                        ransomLetterFound = false;
+                        break;
+                    }
+                }
+
+                if(!ransomLetterFound) { break; }
+            }
+
+            if(ransomLetterFound == true)
+            {
+                canConstruct = true;
+            }
+        }
+        
+        // else
+        // split ransomNote into it's component letters
+        // put them into an array
+        // split magazione into component letetrs, put into an arrya
+
+        // sort both arrays by char
+
+        // LOOP1: then looking at each ransom letter, check if present in magazine
+        //
+        // if yes then remove that letter from the ransom array and magazine array 
+        // if the ransom array is empty, and magazine array is not then we've found all the letetrs and return true
+        
+        // otherwise if the magazine array is empty and ransom array is not then we cannot make all the letetrs, return false
+
+        // otherwise begin LOOP1 again to check if next ransom letter is present in magazine
+
+        return canConstruct;
+    }
 }
 
 public class ListNode {
