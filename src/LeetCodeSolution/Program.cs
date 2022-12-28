@@ -73,18 +73,33 @@ while(middleOfList5 is not null)
 */
 
 // ransom note
-string magazine = "Quibusdam perferendis possimus enim repudiandae aut officia. Modi sint aut laboriosam soluta ipsum inventore tenetur et. Nihil quaerat veniam aut. Iusto sapiente debitis nemo repellat voluptatibus eos itaque.";
+// string loremIpsum = "Quibusdam perferendis possimus enim repudiandae aut officia. Modi sint aut laboriosam soluta ipsum inventore tenetur et. Nihil quaerat veniam aut. Iusto sapiente debitis nemo repellat voluptatibus eos itaque.";
+
+string magazine = "aabb";
 
 // use a loop to test this?
 // eg. a loop of different ransom notes
-string ransomNote1 = "you will be killed";
+string ransomNote1 = "ab";
 bool canConstruct1 = 
     sol.CanConstruct(ransomNote1, magazine);
 Console.WriteLine(
-    $"Can the ransom note be constructed? {canConstruct1}");
+    $"Can the ransom note {ransomNote1} be constructed? {canConstruct1}");
 
-string ransomNote2 = "you will be killez";
+string ransomNote2 = "aba";
 bool canConstruct2 = 
 sol.CanConstruct(ransomNote2, magazine);
 Console.WriteLine(
-    $"Can the ransom note be constructed? {canConstruct2}");
+    $"Can the ransom note {ransomNote2} be constructed? {canConstruct2}");
+
+string ransomNote3 = "ababab";
+bool canConstruct3 = 
+sol.CanConstruct(ransomNote3, magazine);
+Console.WriteLine(
+    $"Can the ransom note {ransomNote3} be constructed? {canConstruct3}");
+
+// case from LeetCode
+string ransomNote4 = "fihjjjjei";
+string magazine4 = "hjibagacbhadfaefdjaeaebgi";
+bool canConstruct4 = sol.CanConstruct(ransomNote4, magazine4);
+Console.WriteLine(
+    $"Can the ransom note {ransomNote4} be constructed? {canConstruct4}");

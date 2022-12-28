@@ -144,73 +144,39 @@ public class LeetCode {
         bool canConstruct = false;
 
         // remove all spaces
-        // magazine.Replace()
-        // use regex
         string ransomNoteClean = System.Text.RegularExpressions.Regex.Replace(ransomNote, @"\s+", "");
         string magazineClean = System.Text.RegularExpressions.Regex.Replace(magazine, @"\s+", "");
-        
+
         if(magazineClean.Contains(ransomNoteClean))
         {
             canConstruct = true;
         }
         else
         {
-            // char[] ransomNoteChars = ransomNoteClean.ToCharArray();
-            // char[] magazineChars = magazineClean.ToCharArray();
-
             List<char> ransomNoteCharsList = ransomNoteClean.ToList<char>();
-            List<char> magazineCharsList = magazineClean.ToList<char>();
 
-            // remove spaces
-            // ransomNoteCharsList.RemoveAll(' ');
-
-            bool ransomLetterFound = false;
+            Console.WriteLine($"looking at ransom note {ransomNoteClean}");
 
             foreach(char ransomLetter in ransomNoteCharsList)
             {
-                Console.WriteLine($"found letter {ransomLetter}");
-
-                foreach(char magLetter in magazineCharsList)
+                if(magazineClean.Contains(ransomLetter))
                 {
-                    Console.WriteLine($"found mag letter {magLetter}");
+                    Console.WriteLine($"found ransom letter {ransomLetter} in {magazineClean}");
+
+                    int index = magazineClean.IndexOf(ransomLetter);
+                    magazineClean = magazineClean.Remove(index, 1);
+
+                    Console.WriteLine($"magazine now looks like this {magazineClean}");
                     
-                    if(ransomLetter == magLetter)
-                    {
-                        ransomLetterFound = true;
-                        magazineCharsList.Remove(ransomLetter);
-                        break;
-                    }
-                    else
-                    {
-                        ransomLetterFound = false;
-                        break;
-                    }
+                    canConstruct = true;
                 }
-
-                if(!ransomLetterFound) { break; }
-            }
-
-            if(ransomLetterFound == true)
-            {
-                canConstruct = true;
+                else
+                {
+                    canConstruct = false;
+                    break;
+                }
             }
         }
-        
-        // else
-        // split ransomNote into it's component letters
-        // put them into an array
-        // split magazione into component letetrs, put into an arrya
-
-        // sort both arrays by char
-
-        // LOOP1: then looking at each ransom letter, check if present in magazine
-        //
-        // if yes then remove that letter from the ransom array and magazine array 
-        // if the ransom array is empty, and magazine array is not then we've found all the letetrs and return true
-        
-        // otherwise if the magazine array is empty and ransom array is not then we cannot make all the letetrs, return false
-
-        // otherwise begin LOOP1 again to check if next ransom letter is present in magazine
 
         return canConstruct;
     }
