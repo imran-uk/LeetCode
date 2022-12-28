@@ -180,6 +180,52 @@ public class LeetCode {
 
         return canConstruct;
     }
+
+    public bool CanConstructDict(string ransomNote, string magazine) {
+        // create dictionary to hold magazine letetrs
+        Dictionary<char, int> magazineLetters = new Dictionary<char, int>();
+        // ConcurrentDictionary<char, int> magazineLetters = new ConcurrentDictionary<char, int>();
+
+        string magazineClean = System.Text.RegularExpressions.Regex.Replace(magazine, @"\s+", "");
+
+        foreach(var letter in magazineClean.ToList<char>())
+        {
+            if(magazineLetters.TryGetValue(letter, out int letterCount))
+            {
+                letterCount++;
+                magazineLetters[letter] = letterCount;
+            }
+            else
+            {
+                magazineLetters[letter] = 1;
+            }
+        }
+
+        string ransomNoteClean = System.Text.RegularExpressions.Regex.Replace(ransomNote, @"\s+", "");
+
+        foreach(var letter in ransomNoteClean.ToList<char>())
+        {
+            if(magazineLetters.TryGetValue(letter, out int letterCount))
+            {
+                if(letterCount == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    letterCount--;
+                    magazineLetters[letter] = letterCount;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        // otherwise we are at end of the loop and return true because we can make the ransom note :) yay!
+        return true;
+    }
 }
 
 public class ListNode {

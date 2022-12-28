@@ -4,30 +4,30 @@ using LeetCodeSolution;
 var sol = new LeetCode();
 
 // max Wealth of customer accounts
-int[][] customerAccounts = new int[][] { 
-    new int[] {1, 2, 3}, 
-    new int[] {6, 3, 2} 
+int[][] customerAccounts = new int[][] {
+    new int[] {1, 2, 3},
+    new int[] {6, 3, 2}
 };
 // int maxWealth = sol.MaximumWealth(customerAccounts);
 // Console.WriteLine($"Maximum customer wealth is: {maxWealth}");
 
 // ok, now for FizzBuzz
 List<string> fizzBuzzOutput1 = sol.FizzBuzz(3);
-foreach(string element in fizzBuzzOutput1)
+foreach (string element in fizzBuzzOutput1)
 {
-    // Console.WriteLine($"The FizzBuzz output: {element}");
+  // Console.WriteLine($"The FizzBuzz output: {element}");
 }
 
 List<string> fizzBuzzOutput2 = sol.FizzBuzz(5);
-foreach(string element in fizzBuzzOutput2)
+foreach (string element in fizzBuzzOutput2)
 {
-    // Console.WriteLine($"The FizzBuzz output: {element}");
+  // Console.WriteLine($"The FizzBuzz output: {element}");
 }
 
 List<string> fizzBuzzOutput3 = sol.FizzBuzz(15);
-foreach(string element in fizzBuzzOutput3)
+foreach (string element in fizzBuzzOutput3)
 {
-    // Console.WriteLine($"The FizzBuzz output: {element}");
+  // Console.WriteLine($"The FizzBuzz output: {element}");
 }
 
 // okay now steps to zero
@@ -79,6 +79,7 @@ string magazine = "aabb";
 
 // use a loop to test this?
 // eg. a loop of different ransom notes
+/*
 string ransomNote1 = "ab";
 bool canConstruct1 = 
     sol.CanConstruct(ransomNote1, magazine);
@@ -103,3 +104,32 @@ string magazine4 = "hjibagacbhadfaefdjaeaebgi";
 bool canConstruct4 = sol.CanConstruct(ransomNote4, magazine4);
 Console.WriteLine(
     $"Can the ransom note {ransomNote4} be constructed? {canConstruct4}");
+*/
+
+// try the Dictionary variant of the ransom note
+// use a loop to test this?
+// eg. a loop of different ransom notes
+string ransomNoted1 = "ab";
+bool canConstructd1 =
+    sol.CanConstructDict(ransomNoted1, magazine);
+Console.WriteLine(
+    $"Can the ransom note {ransomNoted1} be constructed? {canConstructd1}");
+
+string ransomNoted2 = "aba";
+bool canConstructd2 =
+sol.CanConstructDict(ransomNoted2, magazine);
+Console.WriteLine(
+    $"Can the ransom note {ransomNoted2} be constructed? {canConstructd2}");
+
+string ransomNoted3 = "ababab";
+bool canConstructd3 =
+sol.CanConstructDict(ransomNoted3, magazine);
+Console.WriteLine(
+    $"Can the ransom note {ransomNoted3} be constructed? {canConstructd3}");
+
+// case from LeetCode
+string ransomNoted4 = "fihjjjjei";
+string magazine4 = "hjibagacbhadfaefdjaeaebgi";
+bool canConstructd4 = sol.CanConstructDict(ransomNoted4, magazine4);
+Console.WriteLine(
+    $"Can the ransom note {ransomNoted4} be constructed? {canConstructd4}");
