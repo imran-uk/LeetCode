@@ -55,9 +55,10 @@ public class ArraysStrings {
   public double FindMaxAverage(int[] nums, int k) {
       // define the base-case
 
-      int current = 0;
+      double current = 0;
       double answer = 0;
 
+      // since window size is fixed in this case, we can
       // build the first window
       for (int i = 0; i < k; i++) 
       {
@@ -65,19 +66,19 @@ public class ArraysStrings {
       }
 
       // compute average of first window (base case?)
-      answer = (double)current / k;
+      answer = current / k;
 
-      // Console.WriteLine($"initial window average {answer}");
+      Console.WriteLine($"initial window average {answer}");
 
       // slide window along by one...
-      for (int i = k; i < nums.Length -1; i++)
+      for (int i = k; i <= nums.Length-1; i++)
       {
         current += nums[i];
         current -= nums[i - k];
         
-        answer = Math.Max(answer, (double)current / k);
+        answer = Math.Max(answer, current / k);
 
-        // Console.WriteLine($"now I got a window average of {answer}");
+        Console.WriteLine($"now I got a window average of {answer}");
       }
 
       return answer;

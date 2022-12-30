@@ -44,5 +44,12 @@ Explanation: Maximum average is (12 - 5 - 6 + 50) / 4 = 51 / 4 = 12.75
 int[] nums = new int[] { 1, 12, -5, -6, 50, 3 };
 int k = 4;
 
-var maxAverage = astra.FindMaxAverage(nums, k);
+// var maxAverage = astra.FindMaxAverage(nums, k);
+// Console.WriteLine($"i got me {maxAverage}");
+
+int[] nums2 = new int[] { 0, 1, 1, 3, 3 };
+
+// should be 2 according to leetcode - hmmm....
+var maxAverage = astra.FindMaxAverage(nums2, k);
+
 Console.WriteLine($"i got me {maxAverage}");
