@@ -50,5 +50,36 @@ public class ArraysStrings {
     return squaredList.ToArray<int>();
   }
 
+  // TODO
+  // these sliding windows things i don't quite get it yet...
+  public double FindMaxAverage(int[] nums, int k) {
+      // define the base-case
 
+      int current = 0;
+      double answer = 0;
+
+      // build the first window
+      for (int i = 0; i < k; i++) 
+      {
+        current += nums[i];
+      }
+
+      // compute average of first window (base case?)
+      answer = (double)current / k;
+
+      // Console.WriteLine($"initial window average {answer}");
+
+      // slide window along by one...
+      for (int i = k; i < nums.Length -1; i++)
+      {
+        current += nums[i];
+        current -= nums[i - k];
+        
+        answer = Math.Max(answer, (double)current / k);
+
+        // Console.WriteLine($"now I got a window average of {answer}");
+      }
+
+      return answer;
+  }
 }
