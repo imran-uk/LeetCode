@@ -87,25 +87,56 @@ public class ArraysStrings
     return answer;
   }
 
+  // see the exercise hints for nice explanation
   public int LongestOnes(int[] nums, int k)
   {
     int left = 0;
+
+    // this will keep track of the condition, there can be no more than k
+    // zeros in the window
     int curr = 0;
+
     int answer = 0;
 
     foreach (int right in Enumerable.Range(0, nums.Length))
     {
       if (nums[right] == 0) { curr += 1; }
 
+      // if there are more zeros than allowed max,
+      // check if the left edge is a zero,
+      // if so then drop one from the counter
+      // then move the left edge by one
+      // 
       while (curr > k)
       {
         if (nums[left] == 0) { curr -= 1; }
         left += 1;
       }
 
+      // return the greater of last computed length and current 
+      // length (difference between right and left edge lengths but add one to account for 0-index)
       answer = Math.Max(answer, right - left + 1);
     }
 
     return answer;
+  }
+
+  public int[] RunningSum(int[] nums)
+  {
+    // TODO
+    // just follow the running Sum logic shown in description
+
+    // compute first element
+    List<int> answer = new List<int>
+    {
+      nums[0]
+    };
+
+    for (int i = 1; i <= nums.Length - 1; i++)
+    {
+      answer.Add(nums[i] + answer[answer.Count - 1]);
+    }
+
+    return answer.ToArray<int>();
   }
 }
