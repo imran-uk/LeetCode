@@ -1,5 +1,6 @@
 
-public class ArraysStrings {
+public class ArraysStrings
+{
 
   public List<char> reverseStringList(List<char> input)
   {
@@ -22,7 +23,7 @@ public class ArraysStrings {
     // TODO: is this equivalent? it's what i put first in my mind...
     // would be good tow rite own test cases for this shiz :D
     // while(left != right)
-    while(left < right)
+    while (left < right)
     {
       var temp = input[left];
       input[left] = input[right];
@@ -37,10 +38,11 @@ public class ArraysStrings {
   // takes O(n)
   // the main thing i can think of is to sort the input array first 
   // because the squared number will still be in the same order
-  public int[] SortedSquares(int[] nums) {
+  public int[] SortedSquares(int[] nums)
+  {
     var squaredList = new List<int>();
 
-    foreach(var element in nums.ToList<int>())
+    foreach (var element in nums.ToList<int>())
     {
       squaredList.Add(element * element);
     }
@@ -52,36 +54,37 @@ public class ArraysStrings {
 
   // TODO
   // these sliding windows things i don't quite get it yet...
-  public double FindMaxAverage(int[] nums, int k) {
-      // define the base-case
+  public double FindMaxAverage(int[] nums, int k)
+  {
+    // define the base-case
 
-      double current = 0;
-      double answer = 0;
+    double current = 0;
+    double answer = 0;
 
-      // since window size is fixed in this case, we can
-      // build the first window
-      for (int i = 0; i < k; i++) 
-      {
-        current += nums[i];
-      }
+    // since window size is fixed in this case, we can
+    // build the first window
+    for (int i = 0; i < k; i++)
+    {
+      current += nums[i];
+    }
 
-      // compute average of first window (base case?)
-      answer = current / k;
+    // compute average of first window (base case?)
+    answer = current / k;
 
-      Console.WriteLine($"initial window average {answer}");
+    Console.WriteLine($"initial window average {answer}");
 
-      // slide window along by one...
-      for (int i = k; i <= nums.Length-1; i++)
-      {
-        current += nums[i];
-        current -= nums[i - k];
-        
-        answer = Math.Max(answer, current / k);
+    // slide window along by one...
+    for (int i = k; i <= nums.Length - 1; i++)
+    {
+      current += nums[i];
+      current -= nums[i - k];
 
-        Console.WriteLine($"now I got a window average of {answer}");
-      }
+      answer = Math.Max(answer, current / k);
 
-      return answer;
+      Console.WriteLine($"now I got a window average of {answer}");
+    }
+
+    return answer;
   }
 
   public int LongestOnes(int[] nums, int k)
@@ -90,11 +93,12 @@ public class ArraysStrings {
     int curr = 0;
     int answer = 0;
 
-    foreach(int right in Enumerable.Range(0, nums.Length - 1))
+    foreach (int right in Enumerable.Range(0, nums.Length))
     {
       if (nums[right] == 0) { curr += 1; }
 
-      while(curr > k) {
+      while (curr > k)
+      {
         if (nums[left] == 0) { curr -= 1; }
         left += 1;
       }
