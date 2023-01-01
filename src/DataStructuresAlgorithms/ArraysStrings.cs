@@ -83,4 +83,25 @@ public class ArraysStrings {
 
       return answer;
   }
+
+  public int LongestOnes(int[] nums, int k)
+  {
+    int left = 0;
+    int curr = 0;
+    int answer = 0;
+
+    foreach(int right in Enumerable.Range(0, nums.Length - 1))
+    {
+      if (nums[right] == 0) { curr += 1; }
+
+      while(curr > k) {
+        if (nums[left] == 0) { curr -= 1; }
+        left += 1;
+      }
+
+      answer = Math.Max(answer, right - left + 1);
+    }
+
+    return answer;
+  }
 }
