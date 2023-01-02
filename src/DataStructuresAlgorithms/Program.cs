@@ -101,3 +101,6 @@ Output: 5
 int[] numMin = new int[] { -3, 2, -3, 4, 2 };
 var outMin = astra.MinStartValue(numMin);
 Console.WriteLine($"got me min start value of {outMin}");
+
+var outMinAnon = astra.MinStartValueAnon(numMin);
+Console.WriteLine($"Anon / got me min start value of {outMinAnon}");

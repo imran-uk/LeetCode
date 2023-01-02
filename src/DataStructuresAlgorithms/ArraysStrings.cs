@@ -149,6 +149,10 @@ public class ArraysStrings
     // for start .. n
     //  compute running sum
 
+    // hint is "Find the minimum prefix sum."
+
+    // i bet i am over-complicating this :/
+
     while (start <= 100)
     {
       Console.WriteLine($"start value is {start}");
@@ -182,5 +186,35 @@ public class ArraysStrings
     }
 
     return start;
+  }
+
+  // from the internet
+  public int MinStartValueAnon(int[] nums)
+  {
+    int startValue = 1;
+    int sum = startValue;
+
+    while (sum > 0)
+    {
+      for (int i = 0; i < nums.Length; i++)
+      {
+        sum = sum + nums[i];
+        if (sum <= 0)
+        {
+          startValue++;
+          break;
+        }
+      }
+      if (sum > 0)
+      {
+        break;
+      }
+      else
+      {
+        sum = startValue;
+      }
+
+    }
+    return startValue;
   }
 }
