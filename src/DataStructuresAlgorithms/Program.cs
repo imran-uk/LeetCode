@@ -90,5 +90,14 @@ var outRun = astra.RunningSum(numRun);
 
 foreach (var element in outRun)
 {
-  Console.WriteLine($"i got me {element}");
+  //Console.WriteLine($"i got me {element}");
 }
+
+// Minimum Start Value
+/*
+Input: nums = [-3, 2, -3, 4, 2]
+Output: 5
+*/
+int[] numMin = new int[] { -3, 2, -3, 4, 2 };
+var outMin = astra.MinStartValue(numMin);
+Console.WriteLine($"got me min start value of {outMin}");

@@ -139,4 +139,48 @@ public class ArraysStrings
 
     return answer.ToArray<int>();
   }
+
+  public int MinStartValue(int[] nums)
+  {
+    int start = 4;
+
+    // psuedo-code
+
+    // for start .. n
+    //  compute running sum
+
+    while (start <= 100)
+    {
+      Console.WriteLine($"start value is {start}");
+
+      // perform the runningSum here
+      List<int> runSum = new List<int>
+      {
+        (int)nums[0] + start
+      };
+
+      for (int i = 1; i <= nums.Length - 1; i++)
+      {
+        runSum.Add(nums[i] + runSum[runSum.Count - 1]);
+      }
+
+      // print runSum
+      foreach(var element in runSum)
+      {
+        Console.WriteLine(element);
+      }
+
+      if(runSum.Contains(0))
+      {
+        break;
+      }
+      else
+      {
+        // do next loop
+        start++;
+      }
+    }
+
+    return start;
+  }
 }
