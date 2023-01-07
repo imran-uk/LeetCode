@@ -118,4 +118,31 @@ string newStringFromNormal = astra.NormalStringBuilder(oldString);
 // HASHING
 
 var hashi = new Hashing();
+
 hashi.SimpleHashMap();
+
+string repeater = "abcdefe";
+//var repeatedChar = hashi.RepeatedChar(repeater);
+var repeatedChar = hashi.RepeatedCharSet(repeater);
+Console.WriteLine(
+  $"i am checking if there is a repeated character in " +
+  $"{repeater} and it is: {repeatedChar}");
+
+// find target numbers in an array
+int[] magicNumbers = new int[] { 3, 4, 1, 5, 6, 7, 9 };
+// should return { 1, 9 }
+var resultMagic = hashi.findNumbers(magicNumbers);
+
+foreach(var element in resultMagic)
+{
+  Console.WriteLine($"got me this magic number {element}");
+}
+
+string sentence1 = "I am a crazy frog.";
+var panagramCheck1 = hashi.CheckIfPangram(sentence1);
+Console.WriteLine($"is /{sentence1}/ a panagram? {panagramCheck1}");
+
+// should be true
+string sentence2 = "thequickbrownfoxjumpsoverthelazydog";
+var panagramCheck2 = hashi.CheckIfPangram(sentence2);
+Console.WriteLine($"is /{sentence2}/ a panagram? {panagramCheck2}");
