@@ -1,4 +1,6 @@
 
+using System.Text;
+
 public class ArraysStrings
 {
 
@@ -121,6 +123,7 @@ public class ArraysStrings
     return answer;
   }
 
+  // aka prefix sum
   public int[] RunningSum(int[] nums)
   {
     // TODO
@@ -155,7 +158,7 @@ public class ArraysStrings
 
     while (start <= 100)
     {
-      Console.WriteLine($"start value is {start}");
+      //Console.WriteLine($"start value is {start}");
 
       // perform the runningSum here
       List<int> runSum = new List<int>
@@ -171,7 +174,7 @@ public class ArraysStrings
       // print runSum
       foreach(var element in runSum)
       {
-        Console.WriteLine(element);
+        //Console.WriteLine(element);
       }
 
       if(runSum.Contains(0))
@@ -189,6 +192,7 @@ public class ArraysStrings
   }
 
   // from the internet
+  // uses breaks, thats what i do. maybe not ideal...?
   public int MinStartValueAnon(int[] nums)
   {
     int startValue = 1;
@@ -217,4 +221,34 @@ public class ArraysStrings
     }
     return startValue;
   }
+
+  // TODO
+  // can i use the profiler built-in to VS to assess this method?
+  // just a test to build a string in time-efficient way
+  // O(n)
+  public string BuildString(string s)
+  {
+    StringBuilder builder = new StringBuilder();
+
+    // now loop through the string s and add each char to the
+    // builder object
+    foreach(var element in s)
+    {
+      builder.Append(element);
+    }
+
+    return builder.ToString();
+  }
+
+  public string NormalStringBuilder(string s) {
+    string output = "";
+    
+    foreach(var element in s)
+    {
+      output.Append(element);
+    }
+
+    return output;
+  }
 }
+

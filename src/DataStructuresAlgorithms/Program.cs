@@ -1,5 +1,7 @@
 // See https://aka.ms/new-console-template for more information
 
+using DataStructuresAlgorithms;
+
 var astra = new ArraysStrings();
 
 var reversedString = astra.reverseStringList(new List<char> { 'a', 'b', 'c' });
@@ -100,7 +102,20 @@ Output: 5
 */
 int[] numMin = new int[] { -3, 2, -3, 4, 2 };
 var outMin = astra.MinStartValue(numMin);
-Console.WriteLine($"got me min start value of {outMin}");
+//Console.WriteLine($"got me min start value of {outMin}");
 
 var outMinAnon = astra.MinStartValueAnon(numMin);
-Console.WriteLine($"Anon / got me min start value of {outMinAnon}");
+//Console.WriteLine($"Anon / got me min start value of {outMinAnon}");
+
+// efficient way to build a string
+string oldString = "moonshine";
+string newStringFromBuilder = astra.BuildString(oldString);
+//Console.WriteLine($"the string builder gave me dis: {newStringFromBuilder}");
+
+string newStringFromNormal = astra.NormalStringBuilder(oldString);
+//Console.WriteLine($"the normal string method gave me dat: {newStringFromNormal}");
+
+// HASHING
+
+var hashi = new Hashing();
+hashi.SimpleHashMap();
