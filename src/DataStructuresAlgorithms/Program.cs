@@ -146,3 +146,19 @@ Console.WriteLine($"is /{sentence1}/ a panagram? {panagramCheck1}");
 string sentence2 = "thequickbrownfoxjumpsoverthelazydog";
 var panagramCheck2 = hashi.CheckIfPangram(sentence2);
 Console.WriteLine($"is /{sentence2}/ a panagram? {panagramCheck2}");
+
+// find missing number
+int[] numFind = new int[] { 0, 1, 3 };
+var theMissingNumber = hashi.MissingNumber(numFind);
+Console.WriteLine($"yo, i found the missing number and it is: {theMissingNumber}");
+
+
+int[] numFind2 = new int[] { 0, 1 };
+var theMissingNumber2 = hashi.MissingNumber(numFind2);
+Console.WriteLine(
+  $"yo, i found the missing number and it is: {theMissingNumber2}");
+
+int[] numFind3 = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
+var theMissingNumber3 = hashi.MissingNumber(numFind3);
+Console.WriteLine(
+  $"yo, i found the missing number and it is: {theMissingNumber3}");

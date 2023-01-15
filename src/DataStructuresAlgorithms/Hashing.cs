@@ -95,6 +95,9 @@ internal class Hashing
       charHash.Add(element);
     }
 
+    // TODO
+    // in C# is there an easier way to create the alphabet?
+    // in perl it's a..z
     foreach (char element in "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToLower())
     {
       if (!charHash.Contains(element)) { return false; }
@@ -102,4 +105,27 @@ internal class Hashing
 
     return true;
   }
+
+  public int? MissingNumber(int[] nums)
+  {
+    int? missingNumber = null;
+
+    HashSet<int> numSet = new HashSet<int>();
+
+    foreach(var element in nums)
+    {
+      numSet.Add(element);
+    }
+
+    for (int i = 0; i <= nums.Length; i++)
+    {
+      if(!numSet.Contains(i))
+      {
+        missingNumber = i;
+      }
+    }
+
+    return missingNumber;
+  }
+
 }
