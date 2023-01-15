@@ -133,7 +133,7 @@ int[] magicNumbers = new int[] { 3, 4, 1, 5, 6, 7, 9 };
 // should return { 1, 9 }
 var resultMagic = hashi.findNumbers(magicNumbers);
 
-foreach(var element in resultMagic)
+foreach (var element in resultMagic)
 {
   Console.WriteLine($"got me this magic number {element}");
 }
@@ -162,3 +162,7 @@ int[] numFind3 = new int[] { 9, 6, 4, 2, 3, 5, 7, 0, 1 };
 var theMissingNumber3 = hashi.MissingNumber(numFind3);
 Console.WriteLine(
   $"yo, i found the missing number and it is: {theMissingNumber3}");
+
+var numCounting = new int[] { 1, 2, 3 };
+var theNumberCount = hashi.CountElements(numCounting);
+Console.WriteLine($"the count of x+1 is: {theNumberCount}");

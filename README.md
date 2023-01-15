@@ -19,4 +19,4 @@ https://leetcode.com/explore/interview/card/leetcodes-interview-crash-course-dat
 
 # Hashing
 
-actually hash tables!
+actually hash tables & math hash set, not Hash as in Dictionary or Perl hash.

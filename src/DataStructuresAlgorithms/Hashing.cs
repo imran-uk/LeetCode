@@ -112,14 +112,14 @@ internal class Hashing
 
     HashSet<int> numSet = new HashSet<int>();
 
-    foreach(var element in nums)
+    foreach (var element in nums)
     {
       numSet.Add(element);
     }
 
     for (int i = 0; i <= nums.Length; i++)
     {
-      if(!numSet.Contains(i))
+      if (!numSet.Contains(i))
       {
         missingNumber = i;
       }
@@ -128,4 +128,29 @@ internal class Hashing
     return missingNumber;
   }
 
+  public int CountElements(int[] arr)
+  {
+    int plusOneCount = 0;
+
+    HashSet<int> plusOneSet = new HashSet<int>();
+
+    // loop through array and 
+    // put each value in a HashSet
+    foreach (var element in arr)
+    {
+      plusOneSet.Add(element);
+    }
+
+    for (int i = 0; i < arr.Length; i++)
+    {
+      Console.WriteLine($"{arr[i]} and {arr[i] + 1}");
+
+      if (plusOneSet.Contains(arr[i] + 1))
+      {
+        plusOneCount += 1;
+      }
+    }
+
+    return plusOneCount;
+  }
 }
