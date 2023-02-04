@@ -163,6 +163,44 @@ var theMissingNumber3 = hashi.MissingNumber(numFind3);
 Console.WriteLine(
   $"yo, i found the missing number and it is: {theMissingNumber3}");
 
+// count elements
 var numCounting = new int[] { 1, 2, 3 };
 var theNumberCount = hashi.CountElements(numCounting);
 Console.WriteLine($"the count of x+1 is: {theNumberCount}");
+
+
+// find winners
+/*
+ * Input: matches = [[1,3],[2,3],[3,6],[5,6],[5,7],[4,5],
+ * [4,8],[4,9],[10,4],[10,9]]
+Output: [[1,2,10],[4,5,7,8]]
+Explanation:
+Players 1, 2, and 10 have not lost any matches.
+Players 4, 5, 7, and 8 each have lost one match.
+Players 3, 6, and 9 each have lost two matches.
+Thus, answer[0] = [1,2,10] and answer[1] = [4,5,7,8].
+*/
+
+var matches = new int[][]
+{
+  new int[] { 1, 3 },
+  new int[] { 2, 3 },
+  new int[] { 3, 6 },
+  new int[] { 5, 6 },
+  new int[] { 5, 7 },
+  new int[] { 4, 5 },
+  new int[] { 4, 8 },
+  new int[] { 4, 9 },
+  new int[] { 10, 4 },
+  new int[] { 10, 9 }
+};
+
+var winners = hashi.FindWinners(matches);
+
+foreach(var playerGroup in winners)
+{
+  foreach(var element in playerGroup)
+  {
+    Console.WriteLine(element);
+  }
+}

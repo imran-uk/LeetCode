@@ -1,3 +1,5 @@
+using System.Security.Principal;
+
 namespace DataStructuresAlgorithms;
 
 internal class Hashing
@@ -134,8 +136,6 @@ internal class Hashing
 
     HashSet<int> plusOneSet = new HashSet<int>();
 
-    // loop through array and 
-    // put each value in a HashSet
     foreach (var element in arr)
     {
       plusOneSet.Add(element);
@@ -152,5 +152,65 @@ internal class Hashing
     }
 
     return plusOneCount;
+  }
+
+  public IList<IList<int>> FindWinners(int[][] matches)
+  {
+    // create a dict with <player> / times lost
+    // a loss is if the player appeared in second element
+
+    var looserPlayers = new Dictionary<int, int> { };
+
+    foreach (var match in matches)
+    {
+      var looser = match[1];
+
+      if (looserPlayers.ContainsKey(looser))
+      {
+        looserPlayers[looser]++;
+      }
+      else
+      {
+        looserPlayers.Add(looser, 1);
+      }
+    }
+
+    // exactly one loss is if the times-lost is 1
+    // if a player does not appear in this list then
+    // they are un-beaten
+    // maybe create a ahshset of looosers?
+
+    // sort the list of players
+
+    // create hashset of loosers
+    var lostExactlyOneMatch = new HashSet<int>();
+
+    foreach (var looser in looserPlayers)
+    {
+      if (looser.Value == 1) {
+        lostExactlyOneMatch.Add(looser.Key);
+      }
+    }
+
+    // unbeaten and can be put in the winners list
+    var winners = new HashSet<int>();
+
+    foreach (var match in matches)
+    {
+      var winner = match[0];
+
+      if(!looserPlayers.ContainsKey(winner))
+      {
+        winners.Add(winner);
+      }
+    }
+
+    var loosers = lostExactlyOneMatch.ToList();
+    var notLostOneMatch = winners.ToList();
+
+    notLostOneMatch.Sort();
+    loosers.Sort();
+
+    return new List<IList<int>> { notLostOneMatch, loosers };
   }
 }
